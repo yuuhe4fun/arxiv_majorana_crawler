@@ -10,6 +10,7 @@ def update_database(df1, df2):
     cols = ['title', 'author_list', 'published', 'arxiv_primary_category', 'id', 'link']
     df3 = df3[cols] #reorder columns
     df3.sort_values(by=['published'], ascending=False) #sorts by date
+    df3.style.format({'link': _make_clickable}) # make urls clickable
     return(df3)
 
 def create_html(df, filename): #add some arguments to get decent output, but shouldn't really be in here
@@ -27,3 +28,7 @@ def save_database(df, filename):
 def load_database(filename):
     df = pd.read_pickle(filename)
     return(df)
+
+def _make_clickable(val):
+    # target _blank to open new window
+    return '<a target="_blank" href="{}">{}</a>'.format(val, val)
