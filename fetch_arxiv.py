@@ -30,6 +30,6 @@ for search_query in search_keywords:
         dic_stored['title'] = entry.title
         dic_stored['arxiv_primary_category'] = entry.arxiv_primary_category['term']
         dic_stored['published'] = entry.published
-        dic_stored['link'] = entry.link
+        dic_stored['link'] = '<a href="{}" target="_blank">{}</a>'.format(entry.link, entry.id)
         result_list.append(dic_stored)
 
