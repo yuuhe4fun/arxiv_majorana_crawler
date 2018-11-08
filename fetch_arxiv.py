@@ -20,7 +20,7 @@ d = feedparser.parse(base_url+query+sorting_order)
 for entry in d.entries:
     dic_stored = {}
     dic_stored['id'] = entry.id.split('/')[-1].split('v')[0]
-    dic_stored['author_list'] = [entry.authors[i]['name'] for i in range(len(entry.authors))]
+    dic_stored['author_list'] = ', '.join([entry.authors[i]['name'] for i in range(len(entry.authors))])
     dic_stored['title'] = entry.title
     dic_stored['arxiv_primary_category'] = entry.arxiv_primary_category['term']
     dic_stored['published'] = entry.published
