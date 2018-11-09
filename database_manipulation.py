@@ -1,4 +1,5 @@
 import pandas as pd
+import bs4
 from datetime import datetime
 
 def create_dataframe(dict_list): #this takes the output of the parser, but probably should just be the output of the parser
@@ -25,6 +26,24 @@ def create_html(df, filename): #add some arguments to get decent output, but sho
     pd.reset_option('display.max_rows')
     pd.reset_option('display.max_columns')
     pd.reset_option('display.max_colwidth')
+    
+    with open(filename) as inf:
+        txt = inf.read()
+    soup = bs4.BeautifulSoup(txt)
+    metatag = soup.new_tag('meta')
+    metatag.attrs['http-equiv'] = 'Content-Type'
+    metatag.attrs['content'] = 'text/html; charset=utf-8'
+    soup.head.append(metatag)
+    mathjaxtag2 = soup.new_tag('script')
+    mathjaxtag2.attrs['type'] = 'text/javascript' 
+    mathjaxtag2.attrs['src'] = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML' 
+    soup.head.insert(1, mathjaxtag2)
+    mathjaxtag1 = soup.new_tag('script')
+    mathjaxtag1.attrs['type'] = 'text/x-mathjax-config' 
+    mathjaxtag1.append(r"MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});")
+    soup.head.insert(1, mathjaxtag1)
+    with open(filename, "w") as outf:
+        outf.write(str(soup))
 
 def save_database(df, filename):    
     df.to_pickle(filename)
