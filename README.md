@@ -7,24 +7,17 @@ Goal: create & update an arxiv database of relevant papers (based on keywords, a
 Parts that go into this:
 - Scraping the data from arxiv 
   - Arxiv api
-  - Should follow arxiv rules
-  - Have keywords/authors and such as input
-  - Should run on a certain schedule
-  - Could use urllib.requests to manually do so
-  - Could use scrapy, which is more powerful but more complicated?
+  - Has keywords/authors and such as input
+  - Should/could run on a certain schedule
   
 - Parsing the data into a database
   - Extract the relevant fields
   - Structure into a database
-  - Could use feedparser, beautifulsoup, scrapy itself, other parsers..
-  - What type of database to use? Pandas?
+  - Uses feedparser for parsing, pandas for database
   
 - Making the database accessibele 
-  - What type of database to use?
-  - Html?
+  - As html table from pandas database
 
 - Notifying via email
   - On a schedule, check for new entries in some time range
-  - use time.strftime("%Y-%m-%d %H:%M:%S") 
-  - Needs to be able to work with the database easily
-
+  - Email userlist the new entries

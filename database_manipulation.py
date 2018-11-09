@@ -2,12 +2,11 @@ import pandas as pd
 import bs4
 
 def update_database(df1, df2):
-    df3 = pd.concat([df1,df2])
+    df3 = pd.concat([df1,df2], sort=True)
     df3.drop_duplicates(subset=['id'], inplace=True, keep='last') #could be done more efficiently?
     cols = ['title', 'author_list', 'published', 'arxiv_primary_category', 'id', 'link']
     df3 = df3[cols] #reorder columns
-    df3.sort_values(by=['published'], ascending=False) #sorts by date
-    return(df3)
+    return(df3.sort_values(by=['published'], ascending=False))
 
 def create_html(df, filename): #add some arguments to get decent output, but shouldn't really be in here
     pd.set_option('display.max_rows', len(df))
