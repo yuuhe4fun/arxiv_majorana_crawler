@@ -11,17 +11,17 @@ def _convert_time(val):
     return date
  
 
-df3 = pd.read_pickle('dummydatabase.pkl')
+database_df = pd.read_pickle('dummydatabase.pkl')
 
-df3['published'] = df3['published'].apply(_convert_time)
+database_df['published'] = database_df['published'].apply(_convert_time)
     
 now = datetime.datetime.now()
 delta = datetime.timedelta(days=7)
 now - delta
 
-df4 = df3.loc[df3['published'] > (now - delta)]
+database_lastweek_df = database_df.loc[database_df['published'] > (now - delta)]
 
-dm.create_html(df4, 'Last_week_database.html')
+dm.create_html(database_lastweek_df, 'Last_week_database.html')
 
 with open('Adress_list.txt', 'r') as f:
     toAddress = [line.strip() for line in f]
