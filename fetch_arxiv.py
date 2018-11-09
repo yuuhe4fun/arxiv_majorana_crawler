@@ -2,14 +2,13 @@ import urllib
 import feedparser
 from datetime import datetime
 import database_manipulation
+import pandas as pd
 
 # Base api query url
 base_url = 'http://export.arxiv.org/api/query?'
 
-# Search parameters
-search_keywords = ['all:majorana+AND+cat:cond-mat.mes-hall',
-                'au:kouwenhoven+AND+cat:cond-mat.mes-hall',
-                'au:c+m+marcus+AND+cat:cond-mat.mes-hall']
+with open('search_query_list.txt') as file:
+    search_keywords = file.readlines()
 
 # search for majorana in all fields and category cond-mat.mes-hall
 start = 0                     # retreive the first 50 results
@@ -35,7 +34,7 @@ def _join_authors(val):
 result_list = []
 
 for search_query in search_keywords:
-    query = 'search_query=%s&start=%i&max_results=%i' % (search_query,
+    query = 'search_query=%s&start=%i&max_results=%i' % (search_query.rstrip(),
                                                         start,
                                                         max_results)
 
@@ -51,9 +50,9 @@ for search_query in search_keywords:
         dic_stored['link'] = entry.link
         result_list.append(dic_stored)
 
-old_db = database_manipulation.load_database('dummydatabase.pkl')
-new_db = database_manipulation.create_dataframe(result_list)
+old_db = pd.read_pickle('dummydatabase.pkl')
+new_db = pd.DataFrame(result_list)
 updated_db = database_manipulation.update_database(old_db, new_db)
-database_manipulation.save_database(updated_db, 'dummydatabase.pkl')
-
-
+pd.to_pickle(updated_db, 'dummydatabase.pkl')
+# database_manipulation.create_html(updated_db, 'newdummydb.html')
+print(updated_db)
