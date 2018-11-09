@@ -1,6 +1,7 @@
 import urllib
 import feedparser
 from datetime import datetime
+import database_manipulation
 
 # Base api query url
 base_url = 'http://export.arxiv.org/api/query?'
@@ -50,4 +51,9 @@ for search_query in search_keywords:
         dic_stored['link'] = entry.link
         result_list.append(dic_stored)
 
-print(result_list)
+old_db = database_manipulation.load_database('dummydatabase.pkl')
+new_db = database_manipulation.create_dataframe(result_list)
+updated_db = database_manipulation.update_database(old_db, new_db)
+database_manipulation.save_database(updated_db, 'dummydatabase.pkl')
+
+
