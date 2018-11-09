@@ -25,5 +25,6 @@ Parts that go into this:
 
 - Notifying via email
   - On a schedule, check for new entries in some time range
+  - use time.strftime("%Y-%m-%d %H:%M:%S") 
   - Needs to be able to work with the database easily
 
