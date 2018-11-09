@@ -22,7 +22,7 @@ def create_html(df, filename): #add some arguments to get decent output, but sho
     
     with open(filename) as inf:
         txt = inf.read()
-    soup = bs4.BeautifulSoup(txt)
+    soup = bs4.BeautifulSoup(txt, 'html5lib')
     metatag = soup.new_tag('meta')
     metatag.attrs['http-equiv'] = 'Content-Type'
     metatag.attrs['content'] = 'text/html; charset=utf-8'
