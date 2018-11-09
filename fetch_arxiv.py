@@ -1,5 +1,6 @@
 import urllib
 import feedparser
+from datetime import datetime
 
 # Base api query url
 base_url = 'http://export.arxiv.org/api/query?'
@@ -13,6 +14,14 @@ search_keywords = ['all:majorana+AND+cat:cond-mat.mes-hall',
 start = 0                     # retreive the first 50 results
 max_results = 50
 sorting_order = '&sortBy=submittedDate&sortOrder=descending'
+
+def _convert_time(val):
+    """
+    Changes the date-time string format
+    """
+    date = datetime.strptime(val,'%Y-%m-%dT%H:%M:%SZ')
+    return date.strftime("%Y-%m-%d %H:%M:%S")
+
 
 result_list = []
 
@@ -29,7 +38,7 @@ for search_query in search_keywords:
         dic_stored['author_list'] = ', '.join([entry.authors[i]['name'] for i in range(len(entry.authors))])
         dic_stored['title'] = entry.title
         dic_stored['arxiv_primary_category'] = entry.arxiv_primary_category['term']
-        dic_stored['published'] = entry.published
+        dic_stored['published'] = _convert_time(entry.published)
         dic_stored['link'] = entry.link
         result_list.append(dic_stored)
 
