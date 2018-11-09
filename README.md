@@ -20,5 +20,4 @@ Parts that go into this:
 
 - Notifying via email
   - On a schedule, check for new entries in some time range
-  - Uses datetime
-
+  - Email userlist the new entries
