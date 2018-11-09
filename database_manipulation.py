@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import datetime
 
 def create_dataframe(dict_list): #this takes the output of the parser, but probably should just be the output of the parser
     df = pd.DataFrame(dict_list)
@@ -6,9 +7,10 @@ def create_dataframe(dict_list): #this takes the output of the parser, but proba
 
 def update_database(df1, df2):
     df3 = pd.concat([df1,df2])
-    df3.drop_duplicates(subset=['id'], inplace=True, keep='last') #horribly inefficient
+    df3.drop_duplicates(subset=['id'], inplace=True, keep='last') #could be done more efficiently?
     cols = ['title', 'author_list', 'published', 'arxiv_primary_category', 'id', 'link']
     df3 = df3[cols] #reorder columns
+    df3['published'] = df3['published'].apply(_convert_time) #convert time to something legible, could go into parser
     df3.sort_values(by=['published'], ascending=False) #sorts by date
     return(df3)
 
@@ -32,3 +34,7 @@ def load_database(filename):
 def _make_clickable(val):
     # target _blank to open new window
     return '<a target="_blank" href="{}">{}</a>'.format(val, val)
+
+def _convert_time(val):
+    date = datetime.strptime(val,'%Y-%m-%dT%H:%M:%SZ')
+    return date.strftime("%Y-%m-%d %H:%M:%S")
