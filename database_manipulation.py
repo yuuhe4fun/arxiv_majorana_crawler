@@ -10,6 +10,7 @@ def update_database(df1, df2):
     df3.drop_duplicates(subset=['id'], inplace=True, keep='last') #could be done more efficiently?
     cols = ['title', 'author_list', 'published', 'arxiv_primary_category', 'id', 'link']
     df3 = df3[cols] #reorder columns
+    df3['title'] = df3['title'].apply(_remove_newlines) #take out new lines
     df3['published'] = df3['published'].apply(_convert_time) #convert time to something legible, could go into parser
     df3.sort_values(by=['published'], ascending=False) #sorts by date
     return(df3)
@@ -18,7 +19,8 @@ def create_html(df, filename): #add some arguments to get decent output, but sho
     pd.set_option('display.max_rows', len(df))
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_colwidth', -1)
-    df['link'] = df['link'].apply(_make_clickable)
+    df['link'] = df['link'].apply(_make_clickable) #make hyperlinks clickable
+    #df['author_list'] = df['author_list'].apply(_make_utf8) #set correct encoding for html
     df.to_html(filename, escape=False, index=False, justify='left')
     pd.reset_option('display.max_rows')
     pd.reset_option('display.max_columns')
@@ -38,3 +40,9 @@ def _make_clickable(val):
 def _convert_time(val):
     date = datetime.strptime(val,'%Y-%m-%dT%H:%M:%SZ')
     return date.strftime("%Y-%m-%d %H:%M:%S")
+
+def _remove_newlines(val):
+    return val.replace('\n  ', ' ')
+
+def _make_utf8(val):
+    return val.encode('utf-8')
