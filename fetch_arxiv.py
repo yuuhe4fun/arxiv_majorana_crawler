@@ -35,8 +35,8 @@ result_list = []
 
 for search_query in search_keywords:
     query = 'search_query=%s&start=%i&max_results=%i' % (search_query.rstrip(),
-                                                        start,
-                                                        max_results)
+                                                         start,
+                                                         max_results)
 
     d = feedparser.parse(base_url+query+sorting_order)
 
@@ -50,7 +50,10 @@ for search_query in search_keywords:
         dic_stored['link'] = entry.link
         result_list.append(dic_stored)
 
-old_db = pd.read_pickle('dummydatabase.pkl')
+try:
+    old_db = pd.read_pickle('dummydatabase.pkl')
+except:
+    old_db = pd.DataFrame()
 new_db = pd.DataFrame(result_list)
 updated_db = database_manipulation.update_database(old_db, new_db)
 pd.to_pickle(updated_db, 'dummydatabase.pkl')
