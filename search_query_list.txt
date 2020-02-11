@@ -48,4 +48,3 @@ au:a+wallraff+AND+cat:cond-mat.mes-hall
 au:a+yazdani+AND+cat:cond-mat.mes-hall
 au:s+frolov+AND+cat:cond-mat.mes-hall
 au:n+mason+AND+cat:cond-mat.mes-hall
-au:h+q+xu+AND+cat:cond-mat.mes-hall
