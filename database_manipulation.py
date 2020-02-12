@@ -11,7 +11,7 @@ def update_database(df1, df2):
 def create_html(df, filename): # add some arguments to get decent output, but shouldn't really be in here
     pd.set_option('display.max_rows', len(df))
     pd.set_option('display.max_columns', None)
-    pd.set_option('display.max_colwidth', -1)
+    pd.set_option('display.max_colwidth', None)
     df['link'] = df['link'].apply(_make_clickable) #make hyperlinks clickable
     # df['author_list'] = df['author_list'].apply(_make_utf8) #set correct encoding for html
     df.to_html(filename, escape=False, index=False, justify='left')
