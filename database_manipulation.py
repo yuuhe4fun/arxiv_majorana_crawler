@@ -1,5 +1,6 @@
 import pandas as pd
 import bs4
+import codecs
 
 def update_database(df1, df2):
     df3 = pd.concat([df1, df2], sort=True)
@@ -19,7 +20,7 @@ def create_html(df, filename): # add some arguments to get decent output, but sh
     pd.reset_option('display.max_columns')
     pd.reset_option('display.max_colwidth')
 
-    with open(filename) as inf:
+    with codecs.open(filename, 'r', encoding='utf8') as inf:
         txt = inf.read()
     soup = bs4.BeautifulSoup(txt, 'html5lib')
     metatag = soup.new_tag('meta')
@@ -38,7 +39,7 @@ def create_html(df, filename): # add some arguments to get decent output, but sh
     with open('table_style.css', 'r') as css_file:
         csstag.string = css_file.read()
     soup.head.append(csstag)
-    with open(filename, "w") as outf:
+    with codecs.open(filename, "w", encoding='utf8') as outf:
         outf.write(str(soup))
 
 def _make_clickable(val):
