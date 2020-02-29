@@ -1,7 +1,7 @@
 import time
 import fetch_arxiv
 
-cycletime = 60*60*24 # every day
+cycletime = 60*60*6 # every day
 
 doLooping = True
 while doLooping:
