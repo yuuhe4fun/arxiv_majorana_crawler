@@ -10,7 +10,7 @@ def update_database(df1, df2):
     return(df3.sort_values(by=['published'], ascending=False))
 
 def create_html(df, filename): # add some arguments to get decent output, but shouldn't really be in here
-    pd.set_option('display.max_rows', len(df))
+    pd.set_option('display.max_rows', 500) # len(df))
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_colwidth', None)
     df['link'] = df['link'].apply(_make_clickable) #make hyperlinks clickable
