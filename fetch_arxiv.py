@@ -8,16 +8,16 @@ def main():
     query_input = 'search_query_list.txt'
     db_output = 'dummydatabase.pkl'
     html_output = 'arxiv_crawler.html'
+
+    # easy way to publish: run on a TUD desktop and save it to the university personal page
     if platform.system() == 'Windows':
         html_dir = 'H:/www'
     else:
-        html_dir = '/Users/wgz/Desktop'
+        html_dir = '~/Desktop'
 
 
     def _convert_time(val):
-        """
-        Changes the date-time string format
-        """
+        """Changes the date-time string format"""
         date = datetime.strptime(val,'%Y-%m-%dT%H:%M:%SZ')
         return date.strftime("%Y-%m-%d %H:%M:%S")
 
@@ -59,15 +59,17 @@ def main():
             dic_stored['link'] = entry.link
             result_list.append(dic_stored)
 
+    # create a new empty data frame if failed to read an existing DB with the same name
     try:
         old_db = pd.read_pickle(db_output)
-    except:
+    except: 
         old_db = pd.DataFrame()
+    
     new_db = pd.DataFrame(result_list)
     updated_db = database_manipulation.update_database(old_db, new_db)
     pd.to_pickle(updated_db, db_output)
     database_manipulation.create_html(updated_db, os.path.join(html_dir, html_output))
-    print(datetime.now())
+    print('Done writing HTML: ', datetime.now())
 
 if __name__ == '__main__':
     main()
