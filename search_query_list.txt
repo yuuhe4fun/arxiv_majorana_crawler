@@ -50,3 +50,5 @@ au:s+frolov+AND+cat:cond-mat.mes-hall
 au:n+mason+AND+cat:cond-mat.mes-hall
 au:s+tarucha+AND+cat:cond-mat.mes-hall
 au:j+nygard+AND+cat:cond-mat.mes-hall
+au:a+yacoby+AND+cat:cond-mat.mes-hall
+au:b+trauzettel+AND+cat:cond-mat.mes-hall
