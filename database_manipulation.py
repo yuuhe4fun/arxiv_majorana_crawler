@@ -1,6 +1,7 @@
 import pandas as pd
 import bs4
 import codecs
+import datetime
 
 
 def update_database(df1, df2):
@@ -34,8 +35,7 @@ def create_html(df, filename):
 
     mathjaxtag2 = soup.new_tag('script')
     mathjaxtag2.attrs['type'] = 'text/javascript'
-    mathjaxtag2.attrs[
-        'src'] = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+    mathjaxtag2.attrs['src'] = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
     soup.head.insert(1, mathjaxtag2)
     mathjaxtag1 = soup.new_tag('script')
     mathjaxtag1.attrs['type'] = 'text/x-mathjax-config'
@@ -55,6 +55,8 @@ def create_html(df, filename):
         linktags = bs4.BeautifulSoup(f, 'html5lib')
     for l in linktags.head.children:
         soup.head.append(l)
+
+    soup.body.insert(0, f'Last updated {datetime.datetime.now()}')
 
     with codecs.open(filename, "w", encoding='utf8') as outf:
         outf.write(str(soup))
