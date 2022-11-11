@@ -52,3 +52,4 @@ au:s+tarucha+AND+cat:cond-mat.mes-hall
 au:j+nygard+AND+cat:cond-mat.mes-hall
 au:a+yacoby+AND+cat:cond-mat.mes-hall
 au:b+trauzettel+AND+cat:cond-mat.mes-hall
+au:r+wiesendanger+AND+cat:cond-mat.supr-con
