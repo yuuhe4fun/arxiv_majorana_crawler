@@ -1,41 +1,40 @@
-import os, sys, urllib, platform
-import feedparser
+"""
+Usage: python fetch_arxiv.py config_filename
+add -d for debugging (log beginning of each stage)
+"""
+
+import json
+import os
+import sys
 from datetime import datetime
-import database_manipulation
+
+import feedparser
 import pandas as pd
 
-QUERY_INPUT = 'search_query_list.txt'
-DB_OUTPUT = 'dummydatabase.pkl'
-HTML_OUTPUT = 'arxiv_crawler.html'
-
-# easy way to publish: run on a TUD desktop and save it to the university personal page
-if platform.system() == 'Windows':
-    HTML_DIR = 'H:/www'
-else:
-    HTML_DIR = '~/Desktop'
+import database_manipulation as dbmanip
 
 
-def query_arxiv_org(debug_mode=True):
+def _convert_time(val):
+    """Changes the date-time string format"""
+    date = datetime.strptime(val,'%Y-%m-%dT%H:%M:%SZ')
+    return date.strftime("%Y-%m-%d %H:%M:%S")
+
+def _remove_newlines(val):
+    """Strips line breaks from the title string"""
+    return val.replace('\n  ', ' ')
+
+def _join_authors(val):
+    """Makes a single string as the author list"""
+    return ', '.join([val[i]['name'] for i in range(len(val))])
+
+def query_arxiv_org(query_input):
     """Search for query items on arXiv and return the list of results"""
-
-    def _convert_time(val):
-        """Changes the date-time string format"""
-        date = datetime.strptime(val,'%Y-%m-%dT%H:%M:%SZ')
-        return date.strftime("%Y-%m-%d %H:%M:%S")
-
-    def _remove_newlines(val):
-        """Strips line breaks from the title string"""
-        return val.replace('\n  ', ' ')
-
-    def _join_authors(val):
-        """Makes a single string as the author list"""
-        return ', '.join([val[i]['name'] for i in range(len(val))])
 
     # Construct elements of the query string sent to arxiv.org:
     # Base api query url
     base_url = 'http://export.arxiv.org/api/query?'
     # each search item
-    with open(QUERY_INPUT) as file:
+    with open(query_input) as file:
         search_keywords = file.readlines()
     # some options
     start = 0
@@ -46,9 +45,7 @@ def query_arxiv_org(debug_mode=True):
 
     # search for the keywords/authors one by one
     for search_query in search_keywords:
-        query = 'search_query=%s&start=%i&max_results=%i' % (search_query.rstrip(),
-                                                            start,
-                                                            max_results)
+        query = f'search_query={search_query.rstrip()}&start={start}&max_results={max_results}'
 
         d = feedparser.parse(base_url+query+sorting_order) # actual querying
 
@@ -65,30 +62,41 @@ def query_arxiv_org(debug_mode=True):
     return result_list
 
 
-def main(debug_mode=True):
+def main():
+    """
+    Usage: python fetch_arxiv.py config_filename
+    """
+
+    debug_mode = bool('-d' in sys.argv)
+
+    # read config file
+    config_file = sys.argv[1]
+    assert os.path.exists(config_file), "Config file not found."
+    with open(config_file) as c_f:
+        configs = json.load(c_f)
 
     if debug_mode:
         print('Beginning query: ', datetime.now())
-    result_list = query_arxiv_org()
+    result_list = query_arxiv_org(configs['query_input'])
     if debug_mode:
         print('Query successful: ', datetime.now())
 
     # create a new empty data frame if failed to read an existing DB with the same name
     try:
-        old_db = pd.read_pickle(DB_OUTPUT)
-    except: 
+        old_db = pd.read_pickle(configs['db_output'])
+    except FileNotFoundError:
         old_db = pd.DataFrame()
     
     new_db = pd.DataFrame(result_list)
-    updated_db = database_manipulation.update_database(old_db, new_db)
+    updated_db = dbmanip.update_database(old_db, new_db)
     if debug_mode:
         print('Database updated: ', datetime.now())
 
-    pd.to_pickle(updated_db, DB_OUTPUT)
+    pd.to_pickle(updated_db, configs['db_output'])
     if debug_mode:
         print('pkl written: ', datetime.now())
 
-    database_manipulation.create_html(updated_db, os.path.join(HTML_DIR, HTML_OUTPUT))
+    dbmanip.create_html(updated_db, os.path.expanduser(configs['html_output']))
     print('Done writing HTML: ', datetime.now())
 
 

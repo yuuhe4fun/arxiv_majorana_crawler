@@ -1,7 +1,9 @@
-import pandas as pd
-import bs4
 import codecs
 import datetime
+import os
+
+import bs4
+import pandas as pd
 
 
 def update_database(df1, df2):
@@ -51,10 +53,11 @@ def create_html(df, filename):
     titletag.string = 'arXiv crawler'
     soup.head.append(titletag)
 
-    with open('favicon_input.html') as f:
-        linktags = bs4.BeautifulSoup(f, 'html5lib')
-    for l in linktags.head.children:
-        soup.head.append(l)
+    if os.path.isfile('favicon_input.html'):
+        with open('favicon_input.html') as f:
+            linktags = bs4.BeautifulSoup(f, 'html5lib')
+        for l in linktags.head.children:
+            soup.head.append(l)
 
     soup.body.insert(0, f'Last updated {datetime.datetime.now()}')
 
@@ -64,4 +67,4 @@ def create_html(df, filename):
 
 def _make_clickable(val):
     # target _blank to open new window
-    return '<a target="_blank" href="{}">{}</a>'.format(val, val)
+    return f'<a target="_blank" href="{val}">{val}</a>'
