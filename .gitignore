@@ -1,3 +1,5 @@
+crawler-env/
+
 *.pkl
 *.html
 .vscode/
