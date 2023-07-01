@@ -1,4 +1,4 @@
 @echo on
-call C:\Users\guanzhongwang\Anaconda3\Scripts\activate.bat
-CD /D E:\Code\arxiv_majorana_crawler
-C:\Users\guanzhongwang\Anaconda3\python.exe "fetch_arxiv.py"
+call E:\ProgramData\Anaconda3\Scripts\activate.bat
+CD /D D:\Beihang_University\arxiv_majorana_crawler
+E:\ProgramData\Anaconda3\python.exe "fetch_arxiv.py" "config_mac.json"
