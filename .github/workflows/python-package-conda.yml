@@ -30,12 +30,12 @@ jobs:
         run: python3 "fetch_arxiv.py" "config_mac.json"
         
       - name: Commit
-        env:
-        GIT_NAME: yuuhe4fun
-        GIT_EMAIL: hckrinston@hotmail.com
+        # env:
+        # GIT_NAME: "yuuhe4fun"
+        # GIT_EMAIL: "hckrinston@hotmail.com"
         run: |
-          git config --local user.name $GIT_NAME
-          git config --local user.email $GIT_EMAIL
+          git config --local user.name "yuuhe4fun"
+          git config --local user.email "hckrinston@hotmail.com"
           git add .
           git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
       - name: Push
