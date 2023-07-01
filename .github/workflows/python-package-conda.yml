@@ -31,8 +31,8 @@ jobs:
         
       - name: Commit
         env:
-        GIT_NAME: ${{ secrets.GIT_NAME }}
-        GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
+        GIT_NAME: yuuhe4fun
+        GIT_EMAIL: hckrinston@hotmail.com
         run: |
           git config --local user.name $GIT_NAME
           git config --local user.email $GIT_EMAIL
