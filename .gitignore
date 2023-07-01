@@ -1,5 +1,5 @@
 crawler-env/
-
+!arxiv_crawler.html
 *.pkl
 *.html
 .vscode/
