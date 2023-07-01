@@ -9,6 +9,7 @@ env:
   TZ: Asia/Shanghai
 
 jobs:
+  # a single job
   run-fetch-arxiv:
     runs-on: ubuntu-latest
     steps:
@@ -24,25 +25,9 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           pip3 install -r ./requirements.txt
-      
-      - name: Build
-        uses: actions/setup-node@master
-        with:
-          node-version: '16.x'
-      - run: npm install
-      - run: npm run build
           
       - name: Run
         run: python3 "fetch_arxiv.py" "config_mac.json"
-      
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_dir: ./latest_papers
-          github_token: ${{ secrets.DEPLOY_SECRET }}
-          user_name: "yuuhe4fun"
-          user_email: "hckrinston@hotmail.com"
-          commit_message: "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
         
       - name: Commit
         # env:
@@ -57,4 +42,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.MYGITHUB_TOKEN }}
-          branch: master
+          branch: master  
