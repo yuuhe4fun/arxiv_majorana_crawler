@@ -1,0 +1,883 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><style>/* https://www.w3schools.com/css/tryit.asp?filename=trycss_table_fancy */
+body {
+    font-family: "Seravek", -apple-system, BlinkMacSystemFont, Ubuntu, "Source Sans Pro", "Myriad Pro", "Segoe UI", Roboto, 'Open Sans', 'Helvetica Neue', "Trebuchet MS", sans-serif;
+}
+table {
+	font-size: 18px;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+body {
+	background-color: #252627;
+	color: #ddd;
+}
+
+tr:nth-child(even){background-color: #2b2e2f;}
+
+tr:hover {background-color: #373b3d;}
+
+a {color: #88C1D0;}
+a:visited {color: #A3BE8C;}
+
+td, th {
+  border: 1px solid #333;
+  padding: 8px;
+}
+}
+</style><title>arXiv crawler</title></head><body>Last updated 2023-07-02 11:00:24.557950<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>title</th>
+      <th>author_list</th>
+      <th>published</th>
+      <th>arxiv_primary_category</th>
+      <th>id</th>
+      <th>link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Direct Observation of a Superconducting Vortex Diode</td>
+      <td>Alon Gutfreund, Hisakazu Matsuki, Vadim Plastovets, Avia Noah, Laura Gorzawski, Nofar Fridman, Guang Yang, Alexander Buzdin, Oded Millo, Jason W. A. Robinson, Yonathan Anahory</td>
+      <td>2023-01-17 19:00:02</td>
+      <td>cond-mat.supr-con</td>
+      <td>2301.07121</td>
+      <td><a href="http://arxiv.org/abs/2301.07121v1" target="_blank">http://arxiv.org/abs/2301.07121v1</a></td>
+    </tr>
+    <tr>
+      <td>Multiple Andreev reflections in two-dimensional Josephson junctions with broken time-reversal symmetry</td>
+      <td>Linde A. B. Olde Olthof, Stijn R. de Wit, Shu-Ichiro Suzuki, Inanc Adagideli, Jason W. A. Robinson, Alexander Brinkman</td>
+      <td>2023-01-05 19:04:52</td>
+      <td>cond-mat.supr-con</td>
+      <td>2301.02270</td>
+      <td><a href="http://arxiv.org/abs/2301.02270v1" target="_blank">http://arxiv.org/abs/2301.02270v1</a></td>
+    </tr>
+    <tr>
+      <td>Structure of Charge Density Waves in La$_{1.875}$Ba$_{0.125}$CuO$_4$</td>
+      <td>J. Sears, Y. Shen, M. J. Krogstad, H. Miao, E. S. Bozin, I. K. Robinson, G. D. Gu, R. Osborn, S. Rosenkranz, J. M. Tranquada, M. P. M. Dean</td>
+      <td>2022-12-22 18:49:18</td>
+      <td>cond-mat.supr-con</td>
+      <td>2212.11964</td>
+      <td><a href="http://arxiv.org/abs/2212.11964v3" target="_blank">http://arxiv.org/abs/2212.11964v3</a></td>
+    </tr>
+    <tr>
+      <td>Spontaneous superconducting diode effect in non-magnetic Nb/Ru/Sr$_2$RuO$_4$ topological junctions</td>
+      <td>M. S. Anwar, T. Nakamura, R. Ishiguro, S. Arif, J. W. A. Robinson, S. Yonezawa, M. Sigrist, Y. Maeno</td>
+      <td>2022-11-26 17:48:50</td>
+      <td>cond-mat.supr-con</td>
+      <td>2211.14626</td>
+      <td><a href="http://arxiv.org/abs/2211.14626v1" target="_blank">http://arxiv.org/abs/2211.14626v1</a></td>
+    </tr>
+    <tr>
+      <td>Colloquium: Spin-orbit effects in superconducting hybrid structures</td>
+      <td>Morten Amundsen, Jacob Linder, Jason W. A. Robinson, Igor Žutić, Niladri Banerjee</td>
+      <td>2022-10-07 13:35:10</td>
+      <td>cond-mat.supr-con</td>
+      <td>2210.03549</td>
+      <td><a href="http://arxiv.org/abs/2210.03549v1" target="_blank">http://arxiv.org/abs/2210.03549v1</a></td>
+    </tr>
+    <tr>
+      <td>Nodal superconducting exchange coupling</td>
+      <td>Angelo Di Bernardo, Sachio Komori, Giorgio Livanas, Giorgio Divitini, Paola Gentile, Mario Cuoco, Jason W. A. Robinson</td>
+      <td>2022-06-16 04:33:11</td>
+      <td>cond-mat.supr-con</td>
+      <td>2206.07911</td>
+      <td><a href="http://arxiv.org/abs/2206.07911v1" target="_blank">http://arxiv.org/abs/2206.07911v1</a></td>
+    </tr>
+    <tr>
+      <td>Proximity-Induced Superconductivity in Epitaxial Topological Insulator/Graphene/Gallium Heterostructures</td>
+      <td>Cequn Li, Yi-Fan Zhao, Alexander Vera, Omri Lesser, Hemian Yi, Shalini Kumari, Zijie Yan, Chengye Dong, Timothy Bowen, Ke Wang, Haiying Wang, Jessica L. Thompson, Kenji Watanabe, Takashi Taniguchi, Danielle Reifsnyder Hickey, Yuval Oreg, Joshua A. Robinson, Cui-Zu Chang, Jun Zhu</td>
+      <td>2022-05-05 17:35:56</td>
+      <td>cond-mat.mes-hall</td>
+      <td>2205.02806</td>
+      <td><a href="http://arxiv.org/abs/2205.02806v4" target="_blank">http://arxiv.org/abs/2205.02806v4</a></td>
+    </tr>
+    <tr>
+      <td>Controlling spin pumping into superconducting Nb by proximity-induced spin-triplet Cooper pairs</td>
+      <td>Alex K. Chan, Murat Cubukcu, Xavier Montiel, Sachio Komori, Alexander Vanstone, Juliet E. Thompson, Garry K. Perkins, Mark Blamire, Jason WA. Robinson, Matthias Eschrig, Hidekazu Kurebayashi, Lesley F. Cohen</td>
+      <td>2022-02-03 11:01:10</td>
+      <td>cond-mat.supr-con</td>
+      <td>2202.01520</td>
+      <td><a href="http://arxiv.org/abs/2202.01520v1" target="_blank">http://arxiv.org/abs/2202.01520v1</a></td>
+    </tr>
+    <tr>
+      <td>Crossover of Ising- to Rashba-Type Superconductivity in Epitaxial Bi2Se3/Monolayer NbSe2 Heterostructures</td>
+      <td>Hemian Yi, Lun-Hui Hu, Yuanxi Wang, Run Xiao, Jiaqi Cai, Danielle Reifsnyder Hickey, Chengye Dong, Yi-Fan Zhao, Ling-Jie Zhou, Ruoxi Zhang, Anthony R. Richardella, Nasim Alem, Joshua A. Robinson, Moses H. W. Chan, Xiaodong Xu, Nitin Samarth, Chao-Xing Liu, Cui-Zu Chang</td>
+      <td>2021-12-29 16:21:31</td>
+      <td>cond-mat.supr-con</td>
+      <td>2112.14623</td>
+      <td><a href="http://arxiv.org/abs/2112.14623v3" target="_blank">http://arxiv.org/abs/2112.14623v3</a></td>
+    </tr>
+    <tr>
+      <td>A Review of Electronic Transport in Superconducting Sr$_2$RuO$_4$ Junctions</td>
+      <td>Muhammad Shahbaz Anwar, Jason W. A. Robinson</td>
+      <td>2021-09-13 10:38:21</td>
+      <td>cond-mat.supr-con</td>
+      <td>2109.05851</td>
+      <td><a href="http://arxiv.org/abs/2109.05851v2" target="_blank">http://arxiv.org/abs/2109.05851v2</a></td>
+    </tr>
+    <tr>
+      <td>Controllable enhancement of $p$-wave superconductivity via magnetic coupling to a conventional superconductor</td>
+      <td>Linde A. B. Olde Olthof, Lina G. Johnsen, Jason W. A. Robinson, Jacob Linder</td>
+      <td>2021-07-21 18:00:01</td>
+      <td>cond-mat.supr-con</td>
+      <td>2107.10263</td>
+      <td><a href="http://arxiv.org/abs/2107.10263v1" target="_blank">http://arxiv.org/abs/2107.10263v1</a></td>
+    </tr>
+    <tr>
+      <td>Coexistence and tuning of spin-singlet and triplet transport in spin-filter Josephson junctions</td>
+      <td>H. G. Ahmad, M. Minutillo, R. Capecelatro, A. Pal, R. Caruso, G. Passarelli, M. G. Blamire, F. Tafuri, P. Lucignano, D. Massarotti</td>
+      <td>2021-06-29 18:01:13</td>
+      <td>cond-mat.supr-con</td>
+      <td>2106.15646</td>
+      <td><a href="http://arxiv.org/abs/2106.15646v3" target="_blank">http://arxiv.org/abs/2106.15646v3</a></td>
+    </tr>
+    <tr>
+      <td>Boosting spintronics with superconductivity</td>
+      <td>Guang Yang, Chiara Ciccarelli, Jason W. A. Robinson</td>
+      <td>2021-05-05 19:01:06</td>
+      <td>cond-mat.supr-con</td>
+      <td>2105.02287</td>
+      <td><a href="http://arxiv.org/abs/2105.02287v1" target="_blank">http://arxiv.org/abs/2105.02287v1</a></td>
+    </tr>
+    <tr>
+      <td>Thermal annealing enhancement of Josephson critical currents in ferromagnetic CoFeB</td>
+      <td>Sachio Komori, Juliet E. Thompson, Guang Yang, Graham Kimbell, Nadia Stelmashenko, Mark G. Blamire, Jason W. A. Robinson</td>
+      <td>2021-03-30 07:47:39</td>
+      <td>cond-mat.supr-con</td>
+      <td>2103.16136</td>
+      <td><a href="http://arxiv.org/abs/2103.16136v1" target="_blank">http://arxiv.org/abs/2103.16136v1</a></td>
+    </tr>
+    <tr>
+      <td>Evidence for competition between the superconductor proximity effect and quasiparticle spin-decay in superconducting spin-valves</td>
+      <td>B. Stoddart-Stones, X. Montiel, M. G. Blamire, J. W. A. Robinson</td>
+      <td>2021-03-24 17:45:15</td>
+      <td>cond-mat.supr-con</td>
+      <td>2103.13368</td>
+      <td><a href="http://arxiv.org/abs/2103.13368v2" target="_blank">http://arxiv.org/abs/2103.13368v2</a></td>
+    </tr>
+    <tr>
+      <td>Tailoring Superconductivity in Large-Area Single-Layer NbSe2 via Self-Assembled Molecular Adlayers</td>
+      <td>Francesco Calavalle, Paul Dreher, Ananthu P. Surdendran, Wen Wan, Melanie Timpel, Roberto Verucchi, Celia Rogero, Thilo Bauch, Floriana Lombardi, Fèlix Casanova, Marco Vittorio Nardi, Miguel M. Ugeda, Luis E. Hueso, Marco Gobbi</td>
+      <td>2020-12-07 16:39:11</td>
+      <td>cond-mat.supr-con</td>
+      <td>2012.03838</td>
+      <td><a href="http://arxiv.org/abs/2012.03838v1" target="_blank">http://arxiv.org/abs/2012.03838v1</a></td>
+    </tr>
+    <tr>
+      <td>Tunable critical field in Rashba superconductor thin-films</td>
+      <td>L. A. B. Olde Olthof, J. R. Weggemans, G. Kimbell, J. W. A. Robinson, X. Montiel</td>
+      <td>2020-09-30 12:15:07</td>
+      <td>cond-mat.supr-con</td>
+      <td>2009.14592</td>
+      <td><a href="http://arxiv.org/abs/2009.14592v1" target="_blank">http://arxiv.org/abs/2009.14592v1</a></td>
+    </tr>
+    <tr>
+      <td>Spin-orbit coupling suppression and singlet-state blocking of spin-triplet Cooper pairs</td>
+      <td>Sachio Komori, James Devine-Stoneman, Kohei Ohnishi, Guang Yang, Zhanna Devizorova, Sergey Mironov, Xavier Montiel, Linde A. B. Olde Olthof, Lesley F. Cohen, Hidekazu Kurebayashi, Mark G. Blamire, Alexandre I. Buzdin, Jason W. A. Robinson</td>
+      <td>2020-06-30 10:22:17</td>
+      <td>cond-mat.supr-con</td>
+      <td>2006.16654</td>
+      <td><a href="http://arxiv.org/abs/2006.16654v3" target="_blank">http://arxiv.org/abs/2006.16654v3</a></td>
+    </tr>
+    <tr>
+      <td>Spin-transport in superconductors</td>
+      <td>K. Ohnishi, S. Komori, G. Yang, K. -R. Jeon, L. A. B. Olde Olthof, X. Montiel, M. G. Blamire, J. W. A. Robinson</td>
+      <td>2020-03-17 05:13:08</td>
+      <td>cond-mat.mes-hall</td>
+      <td>2003.07533</td>
+      <td><a href="http://arxiv.org/abs/2003.07533v1" target="_blank">http://arxiv.org/abs/2003.07533v1</a></td>
+    </tr>
+    <tr>
+      <td>Charge density waves in cuprate superconductors beyond the critical doping</td>
+      <td>H. Miao, G. Fabbris, R. J. Koch, D. G. Mazzone, C. S. Nelson, R. Acevedo-Esteves, Y. Li, G. D. Gu, T. Yilmaz, K. Kaznatcheev, E. Vescovo, M. Oda, K. Kurosawa, N. Momono, T. A. Assefa, I. K. Robinson, E. Bozin, J. M. Tranquada, P. D. Johnson, M. P. M. Dean</td>
+      <td>2020-01-28 12:32:48</td>
+      <td>cond-mat.supr-con</td>
+      <td>2001.10294</td>
+      <td><a href="http://arxiv.org/abs/2001.10294v3" target="_blank">http://arxiv.org/abs/2001.10294v3</a></td>
+    </tr>
+    <tr>
+      <td>Electrodynamics of highly spin-polarized tunnel Josephson junctions</td>
+      <td>H. G. Ahmad, R. Caruso, A. Pal, G. Rotoli, G. P. Pepe, M. G. Blamire, F. Tafuri, D. Massarotti</td>
+      <td>2020-01-16 19:38:00</td>
+      <td>cond-mat.supr-con</td>
+      <td>2001.06046</td>
+      <td><a href="http://arxiv.org/abs/2001.06046v1" target="_blank">http://arxiv.org/abs/2001.06046v1</a></td>
+    </tr>
+    <tr>
+      <td>Tunable pure spin supercurrents and the demonstration of a superconducting spin-wave device</td>
+      <td>Kun-Rok Jeon, Xavier Montiel, Sachio Komori, Chiara Ciccarelli, James Haigh, Hidekazu Kurebayashi, Lesley F. Cohen, Chang-Min Lee, Mark G. Blamire, Jason W. A. Robinson</td>
+      <td>2019-08-02 14:18:53</td>
+      <td>cond-mat.mes-hall</td>
+      <td>1908.00873</td>
+      <td><a href="http://arxiv.org/abs/1908.00873v3" target="_blank">http://arxiv.org/abs/1908.00873v3</a></td>
+    </tr>
+    <tr>
+      <td>Magnetic-field-orientation-dependent triplet supercurrents in Josephson junctions with symmetric and asymmetric exchange-spring interfaces</td>
+      <td>Ekta Bhatia, J. M. Devine-Stoneman, S. Komori, A. Srivastava, N. A. Stelmashenko, Z. H. Barber, K. Senapati, J. W. A. Robinson</td>
+      <td>2019-07-19 08:35:44</td>
+      <td>cond-mat.supr-con</td>
+      <td>1907.08406</td>
+      <td><a href="http://arxiv.org/abs/1907.08406v1" target="_blank">http://arxiv.org/abs/1907.08406v1</a></td>
+    </tr>
+    <tr>
+      <td>Generating superconducting vortices via spin-orbit coupling</td>
+      <td>L. A. B. Olde Olthof, X. Montiel, J. W. A. Robinson, A. I. Buzdin</td>
+      <td>2019-07-17 13:35:28</td>
+      <td>cond-mat.supr-con</td>
+      <td>1907.07510</td>
+      <td><a href="http://arxiv.org/abs/1907.07510v1" target="_blank">http://arxiv.org/abs/1907.07510v1</a></td>
+    </tr>
+    <tr>
+      <td>Anomalous anisotropic behaviour of spin-triplet proximity effect in Au/SrRuO$_3$/Sr$_2$RuO$_4$ junctions</td>
+      <td>M. S. Anwar, M. Kunieda, R. Ishiguro, S. R. Lee, C. Sow, J. W. A. Robinson, S. Yonezawa, T. W. Noh, Y. Maeno</td>
+      <td>2019-07-11 13:14:43</td>
+      <td>cond-mat.supr-con</td>
+      <td>1907.05175</td>
+      <td><a href="http://arxiv.org/abs/1907.05175v2" target="_blank">http://arxiv.org/abs/1907.05175v2</a></td>
+    </tr>
+    <tr>
+      <td>Anomalies in the pseudogap phase of the cuprates: Competing ground states and the role of umklapp scattering</td>
+      <td>Neil J. Robinson, Peter D. Johnson, T. Maurice Rice, Alexei M. Tsvelik</td>
+      <td>2019-06-21 08:28:09</td>
+      <td>cond-mat.supr-con</td>
+      <td>1906.09005</td>
+      <td><a href="http://arxiv.org/abs/1906.09005v1" target="_blank">http://arxiv.org/abs/1906.09005v1</a></td>
+    </tr>
+    <tr>
+      <td>An Air-Stable and Atomically Thin Graphene/Gallium Superconducting Heterostructure</td>
+      <td>Brian Bersch, Natalie Briggs, Yuanxi Wang, Jue Jiang, Ke Wang, Chengye Dong, Shruti Subramanian, Mingming Fu, Qiang Zou, Ya-Wen Chuang, Zheng Gai, An-Ping Li, Jun Zhu, Cui-Zu Chang, Vincent H. Crespi, Joshua A. Robinson</td>
+      <td>2019-05-23 21:25:28</td>
+      <td>cond-mat.supr-con</td>
+      <td>1905.09938</td>
+      <td><a href="http://arxiv.org/abs/1905.09938v2" target="_blank">http://arxiv.org/abs/1905.09938v2</a></td>
+    </tr>
+    <tr>
+      <td>Long-range triplet proximity effect in multiply connected ferromagnet-superconductor hybrids</td>
+      <td>A. V. Samokhvalov, J. W. A. Robinson, A. I. Buzdin</td>
+      <td>2019-05-19 03:41:19</td>
+      <td>cond-mat.supr-con</td>
+      <td>1905.07683</td>
+      <td><a href="http://arxiv.org/abs/1905.07683v1" target="_blank">http://arxiv.org/abs/1905.07683v1</a></td>
+    </tr>
+    <tr>
+      <td>Magnetic field tunable superconducting transition in Nb/Co/Py/Nb exchange spring multilayers</td>
+      <td>Ekta Bhatia, J. Devine-Stoneman, Zoe H. Barber, J. W. A. Robinson, Kartik Senapati</td>
+      <td>2019-03-07 16:19:19</td>
+      <td>cond-mat.supr-con</td>
+      <td>1903.03022</td>
+      <td><a href="http://arxiv.org/abs/1903.03022v3" target="_blank">http://arxiv.org/abs/1903.03022v3</a></td>
+    </tr>
+    <tr>
+      <td>Niobium diselenide superconducting photodetectors</td>
+      <td>Gavin J. Orchin, Domenico De Fazio, Angelo Di Bernardo, Matthew Hamer, Duhee Yoon, Alisson R. Cadore, Ilya Goykhman, Kenji Watanabe, Takashi Taniguchi, Jason W. A. Robinson, Roman V. Gorbachev, Andrea C. Ferrari, Robert H. Hadfield</td>
+      <td>2019-03-06 18:07:08</td>
+      <td>cond-mat.supr-con</td>
+      <td>1903.02528</td>
+      <td><a href="http://arxiv.org/abs/1903.02528v1" target="_blank">http://arxiv.org/abs/1903.02528v1</a></td>
+    </tr>
+    <tr>
+      <td>Observation of superconducting gap spectra of long-range proximity effect in Au/SrTiO$_3$/SrRuO$_3$/Sr$_2$RuO$_4$ tunnel junctions</td>
+      <td>M. S. Anwar, M. Kunieda, R. Ishiguro, S. R. Lee, L. A. B. Olde Olthof, J. W. A. Robinson, S. Yonezawa, T. W. Noh, Y. Maeno</td>
+      <td>2019-03-05 22:36:57</td>
+      <td>cond-mat.supr-con</td>
+      <td>1903.02093</td>
+      <td><a href="http://arxiv.org/abs/1903.02093v1" target="_blank">http://arxiv.org/abs/1903.02093v1</a></td>
+    </tr>
+    <tr>
+      <td>Fraunhofer patterns in magnetic Josephson junctions with non-uniform magnetic susceptibility</td>
+      <td>Bence Börcsök, Sachio Komori, Alexander Buzdin, Jason Robinson</td>
+      <td>2019-02-05 14:24:32</td>
+      <td>cond-mat.supr-con</td>
+      <td>1902.01709</td>
+      <td><a href="http://arxiv.org/abs/1902.01709v2" target="_blank">http://arxiv.org/abs/1902.01709v2</a></td>
+    </tr>
+    <tr>
+      <td>Tuning of Magnetic Activity in Spin-Filter Josephson Junctions Towards Spin-Triplet Transport</td>
+      <td>R. Caruso, D. Massarotti, G. Campagnano, A. Pal, H. G. Ahmad, P. Lucignano, M. Eschrig, M. G. Blamire, F. Tafuri</td>
+      <td>2019-02-01 15:41:45</td>
+      <td>cond-mat.supr-con</td>
+      <td>1902.00406</td>
+      <td><a href="http://arxiv.org/abs/1902.00406v1" target="_blank">http://arxiv.org/abs/1902.00406v1</a></td>
+    </tr>
+    <tr>
+      <td>Sudden Magnetization Drops in S/F bilayered Structures</td>
+      <td>Edgar J. Patino, M. G. Blamire</td>
+      <td>2019-01-18 16:36:12</td>
+      <td>cond-mat.supr-con</td>
+      <td>1901.06330</td>
+      <td><a href="http://arxiv.org/abs/1901.06330v1" target="_blank">http://arxiv.org/abs/1901.06330v1</a></td>
+    </tr>
+    <tr>
+      <td>Ladder-like optical conductivity in the spin-fermion model</td>
+      <td>Laura Classen, Neil J. Robinson, Alexei M. Tsvelik</td>
+      <td>2018-11-02 21:43:39</td>
+      <td>cond-mat.str-el</td>
+      <td>1811.01103</td>
+      <td><a href="http://arxiv.org/abs/1811.01103v2" target="_blank">http://arxiv.org/abs/1811.01103v2</a></td>
+    </tr>
+    <tr>
+      <td>Controlling spin supercurrents via nonequilibrium spin injection</td>
+      <td>Jabir Ali Ouassou, Jason W. A. Robinson, Jacob Linder</td>
+      <td>2018-10-19 18:00:01</td>
+      <td>cond-mat.supr-con</td>
+      <td>1810.08623</td>
+      <td><a href="http://arxiv.org/abs/1810.08623v2" target="_blank">http://arxiv.org/abs/1810.08623v2</a></td>
+    </tr>
+    <tr>
+      <td>Chirality-controlled spontaneous currents in spin-orbit coupled superconducting rings</td>
+      <td>J. W. A. Robinson, A. V. Samokhvalov, A. I. Buzdin</td>
+      <td>2018-10-05 14:06:16</td>
+      <td>cond-mat.supr-con</td>
+      <td>1810.02696</td>
+      <td><a href="http://arxiv.org/abs/1810.02696v1" target="_blank">http://arxiv.org/abs/1810.02696v1</a></td>
+    </tr>
+    <tr>
+      <td>Electrodynamics of Josephson junctions containing strong ferromagnets</td>
+      <td>D. Massarotti, N. Banerjee, R. Caruso, G. Rotoli, M. G. Blamire, F. Tafuri</td>
+      <td>2018-09-10 13:42:26</td>
+      <td>cond-mat.supr-con</td>
+      <td>1809.03301</td>
+      <td><a href="http://arxiv.org/abs/1809.03301v1" target="_blank">http://arxiv.org/abs/1809.03301v1</a></td>
+    </tr>
+    <tr>
+      <td>Persistent Charge Density Wave Memory in a Cuprate Superconductor</td>
+      <td>X. M. Chen, C. Mazzoli, Y. Cao, V. Thampy, A. M. Barbour, W. Hu, M. Lu, T. Assefa, H. Miao, G. Fabbris, G. D. Gu, J. M. Tranquada, M. P. M. Dean, S. B. Wilkins, I. K. Robinson</td>
+      <td>2018-07-24 12:29:01</td>
+      <td>cond-mat.supr-con</td>
+      <td>1807.09066</td>
+      <td><a href="http://arxiv.org/abs/1807.09066v2" target="_blank">http://arxiv.org/abs/1807.09066v2</a></td>
+    </tr>
+    <tr>
+      <td>Magnetic exchange fields and domain wall superconductivity at an all-oxide superconductor / ferromagnet insulator interface</td>
+      <td>S. Komori, A. Di Bernardo, A. I. Buzdin, M. G. Blamire, J. W. A. Robinson</td>
+      <td>2018-04-06 00:53:46</td>
+      <td>cond-mat.supr-con</td>
+      <td>1804.02094</td>
+      <td><a href="http://arxiv.org/abs/1804.02094v2" target="_blank">http://arxiv.org/abs/1804.02094v2</a></td>
+    </tr>
+    <tr>
+      <td>Controlling the superconducting transition by spin-orbit coupling</td>
+      <td>N. Banerjee, J. A. Ouassou, Y. Zhu, N. A. Stelmashenko, J. Linder, M. G. Blamire</td>
+      <td>2017-09-11 18:00:00</td>
+      <td>cond-mat.supr-con</td>
+      <td>1709.03504</td>
+      <td><a href="http://arxiv.org/abs/1709.03504v2" target="_blank">http://arxiv.org/abs/1709.03504v2</a></td>
+    </tr>
+    <tr>
+      <td>Umklapp scattering as the origin of $T$-linear resistivity in the normal state of high-$T_c$ cuprate superconductors</td>
+      <td>T. Maurice Rice, Neil J. Robinson, Alexei M. Tsvelik</td>
+      <td>2017-07-18 15:04:34</td>
+      <td>cond-mat.supr-con</td>
+      <td>1707.05666</td>
+      <td><a href="http://arxiv.org/abs/1707.05666v4" target="_blank">http://arxiv.org/abs/1707.05666v4</a></td>
+    </tr>
+    <tr>
+      <td>Magnetization-control and transfer of spin-polarized Cooper pairs into a half-metal manganite</td>
+      <td>Anand Srivastava, Linde A. B. Olde Olthof, Angelo Di Bernardo, Sachio Komori, Mario Amado, Carla Palomares-Garcia, Mohammad Alidoust, Klaus Halterman, Mark G. Blamire, Jason W. A. Robinson</td>
+      <td>2017-06-01 15:02:52</td>
+      <td>cond-mat.supr-con</td>
+      <td>1706.00332</td>
+      <td><a href="http://arxiv.org/abs/1706.00332v2" target="_blank">http://arxiv.org/abs/1706.00332v2</a></td>
+    </tr>
+    <tr>
+      <td>Static Charge Density Wave Order in the Superconducting State of La2-xBaxCuO4</td>
+      <td>V. Thampy, X. M. Chen, Y. Cao, C. Mazzoli, A. M. Barbour, W. Hu, H. Miao, G. Fabbris, R. D. Zhong, G. D. Gu, J. M. Tranquada, I. K. Robinson, S. B. Wilkins, M. P. M. Dean</td>
+      <td>2017-04-03 22:26:07</td>
+      <td>cond-mat.supr-con</td>
+      <td>1704.00827</td>
+      <td><a href="http://arxiv.org/abs/1704.00827v4" target="_blank">http://arxiv.org/abs/1704.00827v4</a></td>
+    </tr>
+    <tr>
+      <td>p-wave triggered superconductivity in single layer graphene on an electron-doped oxide superconductor</td>
+      <td>Angelo Di Bernardo, Oded Millo, Matteo Barbone, Hen Alpern, Yoav Kalcheim, Ugo Sassi, Anna Ott, Domenico De Fazio, Duhee Yoon, Mario Amado, Andrea C. Ferrari, Jacob Linder, Jason W. A. Robinson</td>
+      <td>2017-02-06 11:32:03</td>
+      <td>cond-mat.supr-con</td>
+      <td>1702.01572</td>
+      <td><a href="http://arxiv.org/abs/1702.01572v1" target="_blank">http://arxiv.org/abs/1702.01572v1</a></td>
+    </tr>
+    <tr>
+      <td>Spectroscopic evidence of odd frequency superconducting order</td>
+      <td>Avradeep Pal, Jabir Ali Ouassou, Matthias Eschrig, Jacob Linder, Mark Blamire</td>
+      <td>2017-01-31 19:00:01</td>
+      <td>cond-mat.supr-con</td>
+      <td>1702.00010</td>
+      <td><a href="http://arxiv.org/abs/1702.00010v1" target="_blank">http://arxiv.org/abs/1702.00010v1</a></td>
+    </tr>
+    <tr>
+      <td>Triplet Cooper pairs induced in diffusive s-wave superconductors interfaced with strongly spin-polarized magnetic insulators or half-metallic ferromagnets</td>
+      <td>Jabir Ali Ouassou, Avradeep Pal, Mark Blamire, Matthias Eschrig, Jacob Linder</td>
+      <td>2016-10-17 20:00:00</td>
+      <td>cond-mat.supr-con</td>
+      <td>1610.05300</td>
+      <td><a href="http://arxiv.org/abs/1610.05300v2" target="_blank">http://arxiv.org/abs/1610.05300v2</a></td>
+    </tr>
+    <tr>
+      <td>Signature of magnetic-dependent gapless odd frequency states at superconductor/ferromagnet interfaces</td>
+      <td>Angelo Di Bernardo, Simon Diesch, Yuanzhou Gu, Jacob Linder, Giorgio Divitini, Caterina Ducati, Elke Scheer, Mark Blamire, Jason W. A. Robinson</td>
+      <td>2016-09-09 19:48:29</td>
+      <td>cond-mat.supr-con</td>
+      <td>1609.02905</td>
+      <td><a href="http://arxiv.org/abs/1609.02905v1" target="_blank">http://arxiv.org/abs/1609.02905v1</a></td>
+    </tr>
+    <tr>
+      <td>Andreev bound states in superconductor/ferromagnet point contact Andreev reflection spectra</td>
+      <td>K. A. Yates, D. Prabhakaran, M. Egilmez, J. W. A. Robinson, L. F. Cohen</td>
+      <td>2016-06-28 09:05:13</td>
+      <td>cond-mat.supr-con</td>
+      <td>1606.08619</td>
+      <td><a href="http://arxiv.org/abs/1606.08619v1" target="_blank">http://arxiv.org/abs/1606.08619v1</a></td>
+    </tr>
+    <tr>
+      <td>Intrinsic Paramagnetic Meissner Effect due to s-wave Odd-Frequency Superconductivity</td>
+      <td>Angelo Di Bernardo, Zaher Salman, Xiaolei Wang, Mario Amado, Mehmet Egilmez, Machiel Flokstra, Andreas Suter, Steve Lee, Jianhua Zhao, Thomas Prokscha, Elvezio Morenzoni, Mark Blamire, Jacob Linder, Jason W. A. Robinson</td>
+      <td>2016-05-07 14:56:33</td>
+      <td>cond-mat.supr-con</td>
+      <td>1605.02199</td>
+      <td><a href="http://arxiv.org/abs/1605.02199v1" target="_blank">http://arxiv.org/abs/1605.02199v1</a></td>
+    </tr>
+    <tr>
+      <td>Ultrafast energy and momentum resolved dynamics of magnetic correlations in photo-doped Mott insulator Sr$_2$IrO$_4$</td>
+      <td>M. P. M. Dean, Yue Cao, X. Liu, S. Wall, D. Zhu, R. Mankowsky, V. Thampy, X. M. Chen, J. G. Vale, D. Casa, Jungho Kim, A. H. Said, P. Juhas, R. Alonso-Mori, J. M. Glownia, A. Robert, J. Robinson, M. Sikorski, S. Song, M. Kozina, H. Lemke, L. Patthey, S. Owada, T. Katayama, M. Yabashi, Yoshikazu Tanaka, T. Togashi, Jian Liu, C. Rayan Serrao, B. J. Kim, L. Huber, C. -L. Chang, D. F. McMorrow, M. Forst, J. P. Hill</td>
+      <td>2016-04-08 19:36:15</td>
+      <td>cond-mat.str-el</td>
+      <td>1604.02439</td>
+      <td><a href="http://arxiv.org/abs/1604.02439v2" target="_blank">http://arxiv.org/abs/1604.02439v2</a></td>
+    </tr>
+    <tr>
+      <td>Electric control of superconducting transition through a spin-orbit coupled interface</td>
+      <td>Jabir Ali Ouassou, Angelo Di Bernardo, Jason W. A. Robinson, Jacob Linder</td>
+      <td>2016-01-26 21:00:02</td>
+      <td>cond-mat.supr-con</td>
+      <td>1601.07176</td>
+      <td><a href="http://arxiv.org/abs/1601.07176v2" target="_blank">http://arxiv.org/abs/1601.07176v2</a></td>
+    </tr>
+    <tr>
+      <td>Long-range supercurrents induced by the interference effect of opposite-spin triplet state in clean superconductor-ferromagnet structures</td>
+      <td>Hao Meng, Jiansheng Wu, Xiuqiang Wu, Mengyuan Ren, Yajie Ren</td>
+      <td>2016-01-22 15:39:09</td>
+      <td>cond-mat.supr-con</td>
+      <td>1601.06045</td>
+      <td><a href="http://arxiv.org/abs/1601.06045v1" target="_blank">http://arxiv.org/abs/1601.06045v1</a></td>
+    </tr>
+    <tr>
+      <td>Superconducting Spintronics</td>
+      <td>Jacob Linder, Jason W. A. Robinson</td>
+      <td>2015-10-02 20:04:33</td>
+      <td>cond-mat.mes-hall</td>
+      <td>1510.00713</td>
+      <td><a href="http://arxiv.org/abs/1510.00713v1" target="_blank">http://arxiv.org/abs/1510.00713v1</a></td>
+    </tr>
+    <tr>
+      <td>Inverse proximity effect at superconductor-ferromagnet interfaces: Evidence for induced triplet pairing in the superconductor</td>
+      <td>Yoav Kalcheim, Oded Millo, Angelo Di Bernardo, Avardeep Pal, Jason W. A. Robinson</td>
+      <td>2015-08-05 13:21:51</td>
+      <td>cond-mat.supr-con</td>
+      <td>1508.01070</td>
+      <td><a href="http://arxiv.org/abs/1508.01070v1" target="_blank">http://arxiv.org/abs/1508.01070v1</a></td>
+    </tr>
+    <tr>
+      <td>Macroscopic quantum tunneling in spin filter ferromagnetic Josephson junctions</td>
+      <td>D. Massarotti, A. Pal, G. Rotoli, L. Longobardi, M. G. Blamire, F. Tafuri</td>
+      <td>2015-06-26 15:08:21</td>
+      <td>cond-mat.supr-con</td>
+      <td>1506.08108</td>
+      <td><a href="http://arxiv.org/abs/1506.08108v1" target="_blank">http://arxiv.org/abs/1506.08108v1</a></td>
+    </tr>
+    <tr>
+      <td>Reversible control of spin-polarised supercurrents in ferromagnetic Josephson junctions</td>
+      <td>N. Banerjee, J. W. A. Robinson, M. G. Blamire</td>
+      <td>2015-06-16 13:40:07</td>
+      <td>cond-mat.supr-con</td>
+      <td>1506.04966</td>
+      <td><a href="http://arxiv.org/abs/1506.04966v1" target="_blank">http://arxiv.org/abs/1506.04966v1</a></td>
+    </tr>
+    <tr>
+      <td>Femtosecond x rays link melting of charge-density wave correlations and light-enhanced coherent transport in YBa2Cu3O6.6</td>
+      <td>M. Först A. Frano, S. Kaiser, R. Mankowsky, C. R. Hunt, J. J. Turner, G. L. Dakovski, M. P. Minitti, J. Robinson, T. Loew, M. Le Tacon, B. Keimer, J. P. Hill, A. Cavalleri, S. S. Dhesi</td>
+      <td>2015-02-18 19:08:36</td>
+      <td>cond-mat.supr-con</td>
+      <td>1502.05343</td>
+      <td><a href="http://arxiv.org/abs/1502.05343v1" target="_blank">http://arxiv.org/abs/1502.05343v1</a></td>
+    </tr>
+    <tr>
+      <td>Strong odd-frequency correlations in fully gapped Zeeman-split superconductors</td>
+      <td>J. Linder, J. W. A. Robinson</td>
+      <td>2014-09-10 20:00:15</td>
+      <td>cond-mat.supr-con</td>
+      <td>1409.3228</td>
+      <td><a href="http://arxiv.org/abs/1409.3228v2" target="_blank">http://arxiv.org/abs/1409.3228v2</a></td>
+    </tr>
+    <tr>
+      <td>First observation of flux avalanches in a-MoSi superconducting thin films</td>
+      <td>F. Colauto, M. Motta, A. Palau, M. G. Blamire, T. H. Johansen, W. A. Ortiz</td>
+      <td>2014-08-20 13:37:10</td>
+      <td>cond-mat.supr-con</td>
+      <td>1408.4650</td>
+      <td><a href="http://arxiv.org/abs/1408.4650v1" target="_blank">http://arxiv.org/abs/1408.4650v1</a></td>
+    </tr>
+    <tr>
+      <td>Quantum Simulation of Dissipative Processes without Reservoir Engineering</td>
+      <td>R. Di Candia, J. S. Pedernales, A. del Campo, E. Solano, J. Casanova</td>
+      <td>2014-06-10 15:29:48</td>
+      <td>quant-ph</td>
+      <td>1406.2592</td>
+      <td><a href="http://arxiv.org/abs/1406.2592v2" target="_blank">http://arxiv.org/abs/1406.2592v2</a></td>
+    </tr>
+    <tr>
+      <td>Nonlinear lattice dynamics as a basis for enhanced superconductivity in YBa2Cu3O6.5</td>
+      <td>R. Mankowsky, A. Subedi, M. Först, S. O. Mariager, M. Chollet, H. Lemke, J. Robinson, J. Glownia, M. Minitti, A. Frano, M. Fechner, N. A. Spaldin, T. Loew, B. Keimer, A. Georges, A. Cavalleri</td>
+      <td>2014-05-09 15:32:24</td>
+      <td>cond-mat.supr-con</td>
+      <td>1405.2266</td>
+      <td><a href="http://arxiv.org/abs/1405.2266v2" target="_blank">http://arxiv.org/abs/1405.2266v2</a></td>
+    </tr>
+    <tr>
+      <td>Fermion-Fermion Scattering in Quantum Field Theory with Superconducting Circuits</td>
+      <td>L. García-Álvarez, J. Casanova, A. Mezzacapo, I. L. Egusquiza, L. Lamata, G. Romero, E. Solano</td>
+      <td>2014-04-10 16:20:15</td>
+      <td>quant-ph</td>
+      <td>1404.2868</td>
+      <td><a href="http://arxiv.org/abs/1404.2868v2" target="_blank">http://arxiv.org/abs/1404.2868v2</a></td>
+    </tr>
+    <tr>
+      <td>Entanglement Measures in Ion-Trap Quantum Simulators without Full Tomography</td>
+      <td>J. S. Pedernales, R. Di Candia, P. Schindler, T. Monz, M. Hennrich, J. Casanova, E. Solano</td>
+      <td>2014-02-18 17:27:21</td>
+      <td>quant-ph</td>
+      <td>1402.4409</td>
+      <td><a href="http://arxiv.org/abs/1402.4409v2" target="_blank">http://arxiv.org/abs/1402.4409v2</a></td>
+    </tr>
+    <tr>
+      <td>Pure 2nd harmonic current phase relation in Spin filter Josephson junctions</td>
+      <td>Avradeep Pal, Z. H. Barber, J. W. A. Robinson, M. G. Blamire</td>
+      <td>2014-01-21 10:27:12</td>
+      <td>cond-mat.supr-con</td>
+      <td>1401.5253</td>
+      <td><a href="http://arxiv.org/abs/1401.5253v1" target="_blank">http://arxiv.org/abs/1401.5253v1</a></td>
+    </tr>
+    <tr>
+      <td>Efficient Quantum Algorithm for Computing n-time Correlation Functions</td>
+      <td>J. S. Pedernales, R. Di Candia, I. L. Egusquiza, J. Casanova, E. Solano</td>
+      <td>2014-01-10 19:06:48</td>
+      <td>quant-ph</td>
+      <td>1401.2430</td>
+      <td><a href="http://arxiv.org/abs/1401.2430v2" target="_blank">http://arxiv.org/abs/1401.2430v2</a></td>
+    </tr>
+    <tr>
+      <td>Embedding Quantum Simulators for Quantum Computation of Entanglement</td>
+      <td>R. Di Candia, B. Mejia, H. Castillo, J. S. Pedernales, J. Casanova, E. Solano</td>
+      <td>2013-06-03 17:26:51</td>
+      <td>quant-ph</td>
+      <td>1306.0510</td>
+      <td><a href="http://arxiv.org/abs/1306.0510v3" target="_blank">http://arxiv.org/abs/1306.0510v3</a></td>
+    </tr>
+    <tr>
+      <td>Supra-oscillatory critical temperature dependence of Nb-Ho bilayers</td>
+      <td>F. Chiodi, J. D. S. Witt, R. G. J. Smits, L. Qu, G. B. Halász, C. -T. Wu, O. T. Valls, K. Halterman, J. W. A. Robinson, M. G. Blamire</td>
+      <td>2012-11-06 10:04:01</td>
+      <td>cond-mat.supr-con</td>
+      <td>1211.1169</td>
+      <td><a href="http://arxiv.org/abs/1211.1169v1" target="_blank">http://arxiv.org/abs/1211.1169v1</a></td>
+    </tr>
+    <tr>
+      <td>Magnetic-coupling-dependent spin-triplet supercurrents in helimagnet/ferromagnet Josephson junctions</td>
+      <td>Gábor B. Halász, M. G. Blamire, J. W. A. Robinson</td>
+      <td>2012-09-24 18:27:13</td>
+      <td>cond-mat.supr-con</td>
+      <td>1209.5355</td>
+      <td><a href="http://arxiv.org/abs/1209.5355v1" target="_blank">http://arxiv.org/abs/1209.5355v1</a></td>
+    </tr>
+    <tr>
+      <td>Topological Qubits with Majorana Fermions in Trapped Ions</td>
+      <td>A. Mezzacapo, J. Casanova, L. Lamata, E. Solano</td>
+      <td>2011-11-23 20:16:38</td>
+      <td>quant-ph</td>
+      <td>1111.5603</td>
+      <td><a href="http://arxiv.org/abs/1111.5603v2" target="_blank">http://arxiv.org/abs/1111.5603v2</a></td>
+    </tr>
+    <tr>
+      <td>Quantum Simulation of Interacting Fermion Lattice Models in Trapped Ions</td>
+      <td>J. Casanova, A. Mezzacapo, L. Lamata, E. Solano</td>
+      <td>2011-10-17 16:53:54</td>
+      <td>quant-ph</td>
+      <td>1110.3730</td>
+      <td><a href="http://arxiv.org/abs/1110.3730v3" target="_blank">http://arxiv.org/abs/1110.3730v3</a></td>
+    </tr>
+    <tr>
+      <td>The nonrelativistic limit of the Majorana equation and its simulation in trapped ions</td>
+      <td>L. Lamata, J. Casanova, I. L. Egusquiza, E. Solano</td>
+      <td>2011-09-05 16:41:10</td>
+      <td>quant-ph</td>
+      <td>1109.0957</td>
+      <td><a href="http://arxiv.org/abs/1109.0957v2" target="_blank">http://arxiv.org/abs/1109.0957v2</a></td>
+    </tr>
+    <tr>
+      <td>Solvable model of dissipative dynamics in the deep strong coupling regime</td>
+      <td>M. Bina, G. Romero, J. Casanova, J. J. Garcia-Ripoll, A. Lulli, F. Casagrande, E. Solano</td>
+      <td>2011-07-18 10:47:34</td>
+      <td>quant-ph</td>
+      <td>1107.3398</td>
+      <td><a href="http://arxiv.org/abs/1107.3398v1" target="_blank">http://arxiv.org/abs/1107.3398v1</a></td>
+    </tr>
+    <tr>
+      <td>Quantum tomography in position and momentum space</td>
+      <td>J. Casanova, C. E. Lopez, J. J. Garcia-Ripoll, C. F. Roos, E. Solano</td>
+      <td>2011-07-11 16:20:50</td>
+      <td>quant-ph</td>
+      <td>1107.2068</td>
+      <td><a href="http://arxiv.org/abs/1107.2068v2" target="_blank">http://arxiv.org/abs/1107.2068v2</a></td>
+    </tr>
+    <tr>
+      <td>Depairing critical current achieved in superconducting thin films with through-thickness arrays of artificial pinning centers</td>
+      <td>Rafael B. Dinner, Adam P. Robinson, Stuart C. Wimbush, Judith L. MacManus-Driscoll, Mark G. Blamire</td>
+      <td>2010-11-20 19:22:58</td>
+      <td>cond-mat.supr-con</td>
+      <td>1011.4599</td>
+      <td><a href="http://arxiv.org/abs/1011.4599v2" target="_blank">http://arxiv.org/abs/1011.4599v2</a></td>
+    </tr>
+    <tr>
+      <td>Spin-triplet Supercurrent through Inhomogeneous Ferromagnetic Trilayers</td>
+      <td>Mohammad Alidoust, Jacob Linder</td>
+      <td>2010-09-14 20:00:05</td>
+      <td>cond-mat.supr-con</td>
+      <td>1009.2754</td>
+      <td><a href="http://arxiv.org/abs/1009.2754v1" target="_blank">http://arxiv.org/abs/1009.2754v1</a></td>
+    </tr>
+    <tr>
+      <td>Unitary expansion of the time evolution operator</td>
+      <td>N. Zagury, A. Aragao, J. Casanova, E. Solano</td>
+      <td>2010-08-11 20:01:47</td>
+      <td>quant-ph</td>
+      <td>1008.1985</td>
+      <td><a href="http://arxiv.org/abs/1008.1985v3" target="_blank">http://arxiv.org/abs/1008.1985v3</a></td>
+    </tr>
+    <tr>
+      <td>Deep Strong Coupling Regime of the Jaynes-Cummings model</td>
+      <td>J. Casanova, G. Romero, I. Lizuain, J. J. Garcia-Ripoll, E. Solano</td>
+      <td>2010-08-06 17:18:21</td>
+      <td>quant-ph</td>
+      <td>1008.1240</td>
+      <td><a href="http://arxiv.org/abs/1008.1240v3" target="_blank">http://arxiv.org/abs/1008.1240v3</a></td>
+    </tr>
+    <tr>
+      <td>Zeno physics in ultrastrong circuit QED</td>
+      <td>I. Lizuain, J. Casanova, J. J. Garcia-Ripoll, J. G. Muga, E. Solano</td>
+      <td>2009-12-17 18:42:59</td>
+      <td>cond-mat.mes-hall</td>
+      <td>0912.3485</td>
+      <td><a href="http://arxiv.org/abs/0912.3485v3" target="_blank">http://arxiv.org/abs/0912.3485v3</a></td>
+    </tr>
+    <tr>
+      <td>Superconductor-ferromagnet nanocomposites created by co-deposition of niobium and dysprosium</td>
+      <td>Rafael B. Dinner, Suman-Lata Sahonta, Rong Yu, Nadia A. Stelmashenko, Judith L. MacManus-Driscoll, Mark G. Blamire</td>
+      <td>2009-03-18 18:12:11</td>
+      <td>cond-mat.supr-con</td>
+      <td>0903.3142</td>
+      <td><a href="http://arxiv.org/abs/0903.3142v2" target="_blank">http://arxiv.org/abs/0903.3142v2</a></td>
+    </tr>
+    <tr>
+      <td>Sudden Critical Current Drops Induced in S/F Structures</td>
+      <td>E. J. Patino, C. Bell, M. G. Blamire</td>
+      <td>2009-02-15 20:58:45</td>
+      <td>cond-mat.supr-con</td>
+      <td>0902.2572</td>
+      <td><a href="http://arxiv.org/abs/0902.2572v2" target="_blank">http://arxiv.org/abs/0902.2572v2</a></td>
+    </tr>
+    <tr>
+      <td>Critical current of a Josephson junction containing a conical magnet</td>
+      <td>Gábor B. Halász, J. W. A. Robinson, M. G. Blamire, James F. Annett</td>
+      <td>2009-01-14 14:38:08</td>
+      <td>cond-mat.supr-con</td>
+      <td>0901.2024</td>
+      <td><a href="http://arxiv.org/abs/0901.2024v2" target="_blank">http://arxiv.org/abs/0901.2024v2</a></td>
+    </tr>
+    <tr>
+      <td>Parity-dependent proximity effect in superconductor/antiferromagnet heterostructures</td>
+      <td>J. W. A. Robinson, Gabor Halasz, M. G. Blamire</td>
+      <td>2008-08-01 18:17:40</td>
+      <td>cond-mat.supr-con</td>
+      <td>0808.0166</td>
+      <td><a href="http://arxiv.org/abs/0808.0166v1" target="_blank">http://arxiv.org/abs/0808.0166v1</a></td>
+    </tr>
+    <tr>
+      <td>Vortex deformation and breaking in superconductors: A microscopic description</td>
+      <td>E. Pardo, J. H. Durrell, M. G. Blamire</td>
+      <td>2007-01-08 15:32:30</td>
+      <td>cond-mat.supr-con</td>
+      <td>0701150</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0701150v2" target="_blank">http://arxiv.org/abs/cond-mat/0701150v2</a></td>
+    </tr>
+    <tr>
+      <td>0-pi oscillations in nanostructured Nb/Fe/Nb Josephson junctions</td>
+      <td>Samanta Piano, J. W. A. Robinson, G. Burnell, M. G. Blamire</td>
+      <td>2006-12-11 17:53:52</td>
+      <td>cond-mat.supr-con</td>
+      <td>0612235</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0612235v2" target="_blank">http://arxiv.org/abs/cond-mat/0612235v2</a></td>
+    </tr>
+    <tr>
+      <td>A new kind of vortex pinning in superconductor / ferromagnet nanocomposites</td>
+      <td>A. Palau, H. Parvaneh, N. A. Stelmashenko, H. Wang J. L. Macmanus-Driscoll, M. G. Blamire</td>
+      <td>2006-10-04 09:46:37</td>
+      <td>cond-mat.supr-con</td>
+      <td>0610105</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0610105v1" target="_blank">http://arxiv.org/abs/cond-mat/0610105v1</a></td>
+    </tr>
+    <tr>
+      <td>Cross-over between channeling and pinning at twin boundaries in YBa2Cu3O7 thin films</td>
+      <td>A. Palau, J. H. Durrell, J. L. MacManus-Driscoll, S. Harrington, T. Puig, F. Sandiumenge, X. Obradors, M. G. Blamire</td>
+      <td>2006-07-25 15:51:07</td>
+      <td>cond-mat.supr-con</td>
+      <td>0607648</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0607648v1" target="_blank">http://arxiv.org/abs/cond-mat/0607648v1</a></td>
+    </tr>
+    <tr>
+      <td>Critical Current Oscillations in Strong Ferromagnetic Pi-Junctions</td>
+      <td>J. W. A. Robinson, S. Piano, G. Burnell, C. Bell, M. G. Blamire</td>
+      <td>2006-06-02 17:00:18</td>
+      <td>cond-mat.supr-con</td>
+      <td>0606067</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0606067v2" target="_blank">http://arxiv.org/abs/cond-mat/0606067v2</a></td>
+    </tr>
+    <tr>
+      <td>Strong influence of boron precursor powder on the critical current density of MgB2</td>
+      <td>S. K. Chen, K. A. Yates, M. G. Blamire, J. L. MacManus-Driscoll</td>
+      <td>2005-07-27 17:46:20</td>
+      <td>cond-mat.supr-con</td>
+      <td>0507652</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0507652v1" target="_blank">http://arxiv.org/abs/cond-mat/0507652v1</a></td>
+    </tr>
+    <tr>
+      <td>Benefits of current percolation in superconducting coated conductors</td>
+      <td>N. A. Rutter, J. H. Durrell, M. G. Blamire, J. L. MacManus-Driscoll, H. Wang, S. R. Foltyn</td>
+      <td>2005-06-16 14:23:40</td>
+      <td>cond-mat.supr-con</td>
+      <td>0506404</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0506404v1" target="_blank">http://arxiv.org/abs/cond-mat/0506404v1</a></td>
+    </tr>
+    <tr>
+      <td>Characteristics of strong ferromagnetic Josephson junctions with epitaxial barriers</td>
+      <td>C. Bell, R. Loloee, G. Burnell, M. G. Blamire</td>
+      <td>2005-02-22 18:15:31</td>
+      <td>cond-mat.supr-con</td>
+      <td>0502537</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0502537v1" target="_blank">http://arxiv.org/abs/cond-mat/0502537v1</a></td>
+    </tr>
+    <tr>
+      <td>Normal state properties of high angle grain boundaries in (Y,Ca)Ba2Cu3O7-delta</td>
+      <td>S. H. Mennema, J. H. T. Ransley, G. Burnell, J. L. MacManus-Driscoll, E. J. Tarte, M. G. Blamire</td>
+      <td>2004-08-31 22:32:31</td>
+      <td>cond-mat.supr-con</td>
+      <td>0409004</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0409004v1" target="_blank">http://arxiv.org/abs/cond-mat/0409004v1</a></td>
+    </tr>
+    <tr>
+      <td>Critical currents in vicinal YBa$_2$Cu$_3$O$_{7-δ}$ films</td>
+      <td>J. H. Durrell, G. Burnell, Z. H. Barber, M. G. Blamire, J. E. Evetts</td>
+      <td>2004-06-25 13:47:36</td>
+      <td>cond-mat.supr-con</td>
+      <td>0406620</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0406620v2" target="_blank">http://arxiv.org/abs/cond-mat/0406620v2</a></td>
+    </tr>
+    <tr>
+      <td>Enhancement of Critical Current Density in low level Al-doped MgB2</td>
+      <td>A. Berenov, A. Serquis, X. Z. Liao, Y. T. Zhu, D. E. Peterson, Y. Bugoslavsky, K. A. Yates, M. G. Blamire, L. F. Cohen, J. L. MacManus-Driscoll</td>
+      <td>2004-05-24 22:00:05</td>
+      <td>cond-mat.supr-con</td>
+      <td>0405567</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0405567v1" target="_blank">http://arxiv.org/abs/cond-mat/0405567v1</a></td>
+    </tr>
+    <tr>
+      <td>The Normal State Resistivity of Grain Boundaries in YBa2Cu3O7-delta</td>
+      <td>J. H. T. Ransley, S. H. Mennema, K. G. Sandeman, G. Burnell, J. I. Kye, B. Oh, E. J. Tarte, J. E. Evetts, M. G. Blamire</td>
+      <td>2003-11-17 16:19:55</td>
+      <td>cond-mat.mtrl-sci</td>
+      <td>0311386</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0311386v1" target="_blank">http://arxiv.org/abs/cond-mat/0311386v1</a></td>
+    </tr>
+    <tr>
+      <td>Direct Observation of a Temperature Dependent 0-pi Junction Transition in a Mesoscopic High Critical Temperature Grain Boundary Junction</td>
+      <td>G. Testa, A. Monaco, E. Esposito, E. Sarnelli, D. -J. Kang, E. J. Tarte, S. H. Mennema, M. G. Blamire</td>
+      <td>2003-10-30 13:40:56</td>
+      <td>cond-mat.supr-con</td>
+      <td>0310727</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0310727v2" target="_blank">http://arxiv.org/abs/cond-mat/0310727v2</a></td>
+    </tr>
+    <tr>
+      <td>Controllable Josephson current through a pseudo-spin-valve structure</td>
+      <td>C. Bell, G. Burnell, C. W. Leung, E. J. Tarte, D. -J. Kang, M. G. Blamire</td>
+      <td>2003-09-18 13:14:30</td>
+      <td>cond-mat.supr-con</td>
+      <td>0309430</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0309430v1" target="_blank">http://arxiv.org/abs/cond-mat/0309430v1</a></td>
+    </tr>
+    <tr>
+      <td>Proximity and Josephson effects in superconductor - antiferromagnetic Nb / γ-Fe50Mn50 heterostructures</td>
+      <td>C. Bell, E. J. Tarte, G. Burnell, C. W. Leung, D. -J. Kang, M. G. Blamire</td>
+      <td>2003-09-12 14:14:25</td>
+      <td>cond-mat.supr-con</td>
+      <td>0309313</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0309313v1" target="_blank">http://arxiv.org/abs/cond-mat/0309313v1</a></td>
+    </tr>
+    <tr>
+      <td>Disorder induced collapse of the electron phonon coupling in MgB$_{2}$ observed by Raman Spectroscopy</td>
+      <td>K. A. Yates, G. Burnell, N. A. Stelmashenko, D. -J. Kang, H. N. Lee, B. Oh, M. G. Blamire</td>
+      <td>2003-05-20 11:42:22</td>
+      <td>cond-mat.supr-con</td>
+      <td>0305466</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0305466v1" target="_blank">http://arxiv.org/abs/cond-mat/0305466v1</a></td>
+    </tr>
+    <tr>
+      <td>Decoupling of a Current-Biased Intrinsic Josephson Junction from its Environment</td>
+      <td>P. A. Warburton, A. R. Kuzhakhmetov, G. Burnell, M. G. Blamire, H. Schneidewind</td>
+      <td>2003-03-20 13:21:30</td>
+      <td>cond-mat.supr-con</td>
+      <td>0303419</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0303419v1" target="_blank">http://arxiv.org/abs/cond-mat/0303419v1</a></td>
+    </tr>
+    <tr>
+      <td>The critical current of YBa2Cu3O7-d Low Angle Grain Boundaries</td>
+      <td>J. H. Durrell, M. J. Hogg, F. Kahlmann, Z. H. Barber, M. G. Blamire, J. E. Evetts</td>
+      <td>2003-02-21 17:23:57</td>
+      <td>cond-mat.supr-con</td>
+      <td>0302430</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0302430v2" target="_blank">http://arxiv.org/abs/cond-mat/0302430v2</a></td>
+    </tr>
+    <tr>
+      <td>Effective Vortex Pinning in MgB2 thin films</td>
+      <td>Y. Bugoslavsky, L. Cowey, T. J. Tate, G. K. Perkins, J. Moore, Z. Lockman, A. Berenov, J. L. MacManus-Driscoll, A. D. Caplin, L. F. Cohen, H Y Zhai, H M Christen, M P Paranthaman, D H Lowndes, M H Jo, M G Blamire</td>
+      <td>2002-07-02 17:41:16</td>
+      <td>cond-mat.supr-con</td>
+      <td>0207080</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0207080v1" target="_blank">http://arxiv.org/abs/cond-mat/0207080v1</a></td>
+    </tr>
+    <tr>
+      <td>Josephson effects in MgB2 meta masked ion damage junctions</td>
+      <td>D. -J. Kang, N. H. Peng, R. Webb, C. Jeynes, J. H. Yun, S. H. Moon, D. Oh, G. Burnell, E. J. Tarte, D. F. Moore, M. G. Blamire</td>
+      <td>2002-06-12 12:43:38</td>
+      <td>cond-mat.supr-con</td>
+      <td>0206207</td>
+      <td><a href="http://arxiv.org/abs/cond-mat/0206207v1" target="_blank">http://arxiv.org/abs/cond-mat/0206207v1</a></td>
+    </tr>
+  </tbody>
+</table></body></html>
