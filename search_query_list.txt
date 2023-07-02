@@ -1,3 +1,5 @@
+all:nonlocal+AND+cat:cond-mat.supr-con
+all:spin+current+AND+cat:cond-mat.supr-con
 au:jason+w+a+robinson+AND+cat:cond-mat.supr-con
 au:m+g+blamire+AND+cat:cond-mat.supr-con
 au:f+casanova+AND+cat:cond-mat.supr-con
